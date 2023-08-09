@@ -1,0 +1,234 @@
+{
+  // Plugins
+  "quokka.colorizeOutput": true,
+  "tabnine.experimentalAutoImports": true,
+  "projectManager.git.baseFolders": ["$home/hs", "$home/Gitchub"],
+
+  // EDITOR
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.acceptSuggestionOnCommitCharacter": true,
+  "editor.codeActionsOnSave": {
+    "source.addMissingImports": true,
+    "source.organizeImports": true
+  },
+  "editor.comments.ignoreEmptyLines": true,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorStyle": "block",
+  "editor.cursorBlinking": "solid",
+  "editor.cursorSurroundingLines": 8,
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontLigatures": true,
+  "editor.fontWeight": "300",
+  // Don't know if I need this
+  // "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.lineNumbers": "relative",
+  "editor.linkedEditing": true,
+  "editor.minimap.enabled": false,
+  "editor.suggestFontSize": 14,
+  "editor.suggest.insertMode": "replace",
+  "editor.wordWrap": "on",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.enableUndo": true,
+  "explorer.sortOrder": "type",
+
+  // FILES
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/node_modules": true
+  },
+  "files.trimFinalNewlines": true,
+
+  // TERMINAL
+  "terminal.integrated.env.linux": {},
+  "terminal.integrated.env.windows": {},
+
+  // VIM settings
+  "vim.enableNeovim": true,
+  "vim.autoindent": true,
+  "vim.easymotion": true,
+  "vim.highlightedyank.duration": 50,
+  "vim.hlsearch": true,
+  "vim.leader": "<space>",
+  "vim.useSystemClipboard": true,
+  "vim.visualstar": true,
+  "vim.normalModeKeyBindings": [
+    // UI Toggles
+    {
+      "before": ["<leader>", "l"],
+      "commands": ["revealInExplorer"]
+    },
+    {
+      "before": ["<leader>", "m", "d"],
+      "commands": ["markdown-preview-enhanced.openPreviewToTheSide"]
+    },
+    {
+      "before": ["leader", "p"],
+      "commands": ["workbench.action.showCommands"]
+    },
+    {
+      "before": ["<leader>", "s"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["<leader>", "t", "r"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "z"],
+      "commands": ["workbench.action.toggleZenMode"]
+    },
+    // File operations & shortcuts
+    {
+      "before": ["<leader>", "f", "r"],
+      "commands": ["fileutils.renameFile"]
+    },
+    {
+      "before": ["leader", "f", "f"],
+      "commands": ["editor.action.format"]
+    },
+    {
+      "before": ["<leader>", "o"],
+      "commands": ["editor.action.insertLineAfter"]
+    },
+    {
+      "before": ["<leader>", "O"],
+      "commands": ["editor.action.insertLineBefore"]
+    },
+    // STUFF THAT DOESN'T WORK RN
+    // {
+    //   "before": ["<leader>", "i", "p"],
+    //   "commands": ["=ap"]
+    // },
+    // {
+    //   "before": ["+"],
+    //   "commands": ["editor.action.changeLine"]
+    // },
+    // {
+    //   "before": ["{"],
+    //   "commands": ["{zzzv"]
+    // },
+    // {
+    //   "before": ["<leader>", "a"],
+    //   "commands": ["g", "g", "v", "g"]
+    // },
+    // LSP STUFF
+    {
+      "before": ["K"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": ["<leader>", "v", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["g", "h"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
+    },
+    // Buffer management
+    {
+      "before": ["<Tab>"],
+      "commands": [":bnext"]
+    },
+    {
+      "before": ["<S-Tab>"],
+      "commands": [":bprev"]
+    },
+    {
+      "before": ["leader", "b", "c"],
+      "commands": [":bdelete"]
+    },
+    {
+      "before": ["leader", "b", "d"],
+      "commands": [":bd!"]
+    },
+    {
+      "before": ["<leader>", "w", "s"],
+      "commands": [":split"]
+    },
+    {
+      "before": ["<leader>", "w", "v"],
+      "commands": [":vsplit"]
+    },
+    {
+      "before": ["<leader>", "w", "w"],
+      "commands": [":wa"]
+    },
+    {
+      "before": ["<leader>", "<Esc>"],
+      "commands": [":quitall"]
+    },
+    {
+      "before": ["<leader>", "q"],
+      "commands": [":close"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // Good visual indenting
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    // Moving text inside visual mode and keeping indentation
+    {
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    // Block commenting
+    {
+      "before": ["g", "b"],
+      "commands": ["editor.action.blockComment"]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    // Completion keybinds
+    {
+      "before": ["<C-n>"],
+      "commands": ["selectNextSuggestion"]
+    },
+    {
+      "before": ["<C-p>"],
+      "commands": ["selectPrevSuggestion"]
+    },
+    {
+      "before": ["<C-y>"],
+      "commands": ["acceptSelectedSuggestion"]
+    }
+  ],
+
+  // WORKBENCH
+  "workbench.colorTheme": "Tokyo Night AltSynt",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.settings.editor": "json",
+  "workbench.startupEditor": "none",
+  "workbench.statusBar.visible": true,
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#0037AA"
+  },
+
+  // WINDOW
+  "window.menuBarVisibility": "toggle",
+  "window.zoomLevel": 1,
+  "zenMode.hideLineNumbers": false,
+  "zenMode.hideTabs": false,
+
+  /// PER LANGUAGE STUFF
+
+  // JSON
+  "cSpell.enableFiletypes": ["!jsonc"],
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
