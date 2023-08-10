@@ -1,8 +1,16 @@
 {
   // Plugins
   "quokka.colorizeOutput": true,
+
   "tabnine.experimentalAutoImports": true,
+
   "projectManager.git.baseFolders": ["$home/hs", "$home/Gitchub"],
+
+  "gitblame.delayBlame": 2000,
+  "gitblame.inlineMessageFormat": "--> ${author.name} - (${time.ago})",
+  "gitblame.inlineMessageMargin": 1,
+  "gitblame.inlineMessageNoCommit": "Not yet?",
+  "gitblame.statusBarMessageFormat": "--> ${author.name} - (${time.ago})",
 
   // EDITOR
   "editor.acceptSuggestionOnEnter": "off",
@@ -28,7 +36,7 @@
   "editor.minimap.enabled": false,
   "editor.suggestFontSize": 14,
   "editor.suggest.insertMode": "replace",
-  "editor.wordWrap": "on",
+  "editor.wordWrap": "wordWrapColumn",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.enableUndo": true,
@@ -50,6 +58,7 @@
   "vim.enableNeovim": true,
   "vim.autoindent": true,
   "vim.easymotion": true,
+  "vim.highlightedyank.enable": true,
   "vim.highlightedyank.duration": 50,
   "vim.hlsearch": true,
   "vim.leader": "<space>",
@@ -58,32 +67,40 @@
   "vim.normalModeKeyBindings": [
     // UI Toggles
     {
-      "before": ["<leader>", "l"],
+      "before": ["<leader>", "l"], // Show active editor in explorer
       "commands": ["revealInExplorer"]
     },
     {
-      "before": ["<leader>", "m", "d"],
+      "before": ["<leader>", "m", "d"], // Markdown Preview
       "commands": ["markdown-preview-enhanced.openPreviewToTheSide"]
     },
     {
-      "before": ["leader", "p"],
+      "before": ["leader", "p", "c"], // Command Palette
       "commands": ["workbench.action.showCommands"]
     },
     {
-      "before": ["<leader>", "s"],
+      "before": ["leader", "p", "m"], // Command Palette
+      "commands": ["projectManager"]
+    },
+    {
+      "before": ["<leader>", "s"], // Sidebar toggle
       "commands": ["workbench.action.toggleSidebarVisibility"]
     },
     {
-      "before": ["<leader>", "t", "r"],
+      "before": ["<leader>", "t", "r"], // Ctrl + P
       "commands": ["workbench.action.quickOpen"]
     },
     {
-      "before": ["<leader>", "z"],
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.files.action.focusFilesExplorer"]
+    },
+    {
+      "before": ["<leader>", "z"], // Zen mode
       "commands": ["workbench.action.toggleZenMode"]
     },
     // File operations & shortcuts
     {
-      "before": ["<leader>", "f", "r"],
+      "before": ["<leader>", "f", "r"], // Rename
       "commands": ["fileutils.renameFile"]
     },
     {

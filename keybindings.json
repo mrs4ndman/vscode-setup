@@ -85,27 +85,41 @@
     "when": "explorerViewletFocus"
   },
   {
-    "key": "d",
+    "key": "d", // Crear carpetas
     "command": "explorer.newFolder",
     "when": "explorerViewletFocus && !inputFocus"
   },
   {
-    "key": "shift+d",
+    "key": "q", // Salir del explorador 1
+    "command": "workbench.action.closeSidebar",
+    "when": "explorerViewletFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+c", // Salir del explorador 2
+    "command": "workbench.action.closeSidebar",
+    "when": "explorerViewletFocus && !inputFocus"
+  },
+  {
+    "key": "shift+d", // Borrar archivos
     "command": "deleteFile",
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
-    "key": "shift+r",
+    "key": "shift+r", // Renombrar archivos
     "command": "renameFile",
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
-    "key": "alt+shift+s",
+    "key": "alt+shift+s", // Sidebar global toggle
     "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "alt+shift+e",
+    "command": "workbench.files.action.focusFilesExplorer"
   },
   // VS Code instance management
   {
-    "key": "ctrl+shift+n",
+    "key": "ctrl+shift+n", // Crear nueva instancia
     "command": "workbench.action.newWindow",
     "when": "!explorerViewletFocus && !terminalFocus"
   }
