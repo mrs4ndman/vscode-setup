@@ -36,11 +36,15 @@
   "editor.minimap.enabled": false,
   "editor.suggestFontSize": 14,
   "editor.suggest.insertMode": "replace",
+  "editor.stickyScroll.enabled": true,
   "editor.wordWrap": "wordWrapColumn",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.enableUndo": true,
   "explorer.sortOrder": "type",
+  "extensions.autoCheckUpdates": true,
+  "extensions.autoUpdate": "onlyEnabledExtensions",
+  "extensions.ignoreRecommendations": true,
 
   // FILES
   "files.exclude": {
@@ -67,6 +71,14 @@
   "vim.normalModeKeyBindings": [
     // UI Toggles
     {
+      "before": ["<leader>", "a"],
+      "after": ["g", "g", "v", "G"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.files.action.focusFilesExplorer"]
+    },
+    {
       "before": ["<leader>", "l"], // Show active editor in explorer
       "commands": ["revealInExplorer"]
     },
@@ -91,12 +103,31 @@
       "commands": ["workbench.action.quickOpen"]
     },
     {
-      "before": ["<leader>", "e"],
-      "commands": ["workbench.files.action.focusFilesExplorer"]
-    },
-    {
       "before": ["<leader>", "z"], // Zen mode
       "commands": ["workbench.action.toggleZenMode"]
+    },
+    // Neocim leap mapping
+    {
+      "before": ["+"],
+      "after": ["S"]
+    },
+    {
+      "before": ["<C-u>"],
+      "after": ["<C-u>", "z", "z"]
+    },
+    {
+      "before": ["<C-d>"],
+      "after": ["<C-d>", "z", "z"]
+    },
+    {},
+    // Undo / redo mappings
+    {
+      "before": ["u"],
+      "commands": ["undo"]
+    },
+    {
+      "before": ["<C-r>"],
+      "commands": ["redo"]
     },
     // File operations & shortcuts
     {
@@ -115,23 +146,16 @@
       "before": ["<leader>", "O"],
       "commands": ["editor.action.insertLineBefore"]
     },
+    {
+      "before": ["<leader>", "i", "p"],
+      "after": ["=", "a", "p"]
+    },
     // STUFF THAT DOESN'T WORK RN
     // {
-    //   "before": ["<leader>", "i", "p"],
-    //   "commands": ["=ap"]
+    //   "before": ["}"],
+    //   "after": ["}zzzv"]
     // },
-    // {
-    //   "before": ["+"],
-    //   "commands": ["editor.action.changeLine"]
-    // },
-    // {
-    //   "before": ["{"],
-    //   "commands": ["{zzzv"]
-    // },
-    // {
-    //   "before": ["<leader>", "a"],
-    //   "commands": ["g", "g", "v", "g"]
-    // },
+
     // LSP STUFF
     {
       "before": ["K"],
@@ -144,6 +168,14 @@
     {
       "before": ["g", "h"],
       "commands": ["editor.action.showDefinitionPreviewHover"]
+    },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.mark.prev"]
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.mark.next"]
     },
     // Buffer management
     {
@@ -246,6 +278,22 @@
   // JSON
   "cSpell.enableFiletypes": ["!jsonc"],
   "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "sortJSON.orderOverride": ["name", "version", "description"],
+  "sortJSON.orderUnderride": ["dependencies", "devDependencies"],
+
+  // TYPESCRIPT Y JAVASCRIPT
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

@@ -117,6 +117,16 @@
     "key": "alt+shift+e",
     "command": "workbench.files.action.focusFilesExplorer"
   },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "!editorTextFocus && vim.active && vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "!editorTextFocus && vim.active && vim.mode != 'Insert'"
+  },
   // VS Code instance management
   {
     "key": "ctrl+shift+n", // Crear nueva instancia
