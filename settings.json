@@ -12,6 +12,12 @@
   "gitblame.inlineMessageNoCommit": "Not yet?",
   "gitblame.statusBarMessageFormat": "--> ${author.name} - (${time.ago})",
 
+  "codeium.enableSearch": true,
+
+  "redhat.telemetry.enabled": false,
+
+  "git.autofetch": true,
+
   // EDITOR
   "editor.acceptSuggestionOnEnter": "off",
   "editor.acceptSuggestionOnCommitCharacter": true,
@@ -24,20 +30,24 @@
   "editor.cursorStyle": "block",
   "editor.cursorBlinking": "solid",
   "editor.cursorSurroundingLines": 8,
+  "editor.find.cursorMoveOnType": false,
   "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontLigatures": true,
   "editor.fontWeight": "300",
-  // Don't know if I need this
+  // TODO: Don't know if I need this
   // "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
+  // "editor.formatOnSave": true,
   "editor.inlineSuggest.enabled": true,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.inlayHints.padding": true,
   "editor.lineNumbers": "relative",
   "editor.linkedEditing": true,
   "editor.minimap.enabled": false,
+  "editor.mouseWheelZoom": true,
   "editor.suggestFontSize": 14,
   "editor.suggest.insertMode": "replace",
   "editor.stickyScroll.enabled": true,
-  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrap": "bounded",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.enableUndo": true,
@@ -57,6 +67,8 @@
   // TERMINAL
   "terminal.integrated.env.linux": {},
   "terminal.integrated.env.windows": {},
+  "terminal.integrated.persistentSessionScrollback": 10000,
+  "terminal.integrated.scrollback": 10000,
 
   // VIM settings
   "vim.enableNeovim": true,
@@ -68,14 +80,14 @@
   "vim.leader": "<space>",
   "vim.useSystemClipboard": true,
   "vim.visualstar": true,
-  "vim.normalModeKeyBindings": [
+  "vim.normalModeKeyBindingsNonRecursive": [
     // UI Toggles
     {
-      "before": ["<leader>", "a"],
+      "before": ["<leader>", "s", "a"],
       "after": ["g", "g", "v", "G"]
     },
     {
-      "before": ["<leader>", "e"],
+      "before": ["<leader>", "E"],
       "commands": ["workbench.files.action.focusFilesExplorer"]
     },
     {
@@ -90,10 +102,10 @@
       "before": ["leader", "p", "c"], // Command Palette
       "commands": ["workbench.action.showCommands"]
     },
-    {
-      "before": ["leader", "p", "m"], // Command Palette
-      "commands": ["projectManager"]
-    },
+    // {
+    //   "before": ["leader", "p", "m"], // Command Palette
+    //   "commands": ["projectManager"]
+    // },
     {
       "before": ["<leader>", "s"], // Sidebar toggle
       "commands": ["workbench.action.toggleSidebarVisibility"]
@@ -106,10 +118,18 @@
       "before": ["<leader>", "z"], // Zen mode
       "commands": ["workbench.action.toggleZenMode"]
     },
-    // Neocim leap mapping
+    // Neovim leap mapping
     {
       "before": ["+"],
       "after": ["S"]
+    },
+    {
+      "before": ["s"],
+      "after": ["<leader>", "<leader>", "2", "s"]
+    },
+    {
+      "before": ["<CR>"],
+      "after": ["o", "<Esc>"]
     },
     {
       "before": ["<C-u>"],
@@ -166,6 +186,10 @@
       "commands": ["editor.action.quickFix"]
     },
     {
+      "before": ["<leader>", "r", "f"],
+      "commands": ["editor.action.rename"],
+    },
+    {
       "before": ["g", "h"],
       "commands": ["editor.action.showDefinitionPreviewHover"]
     },
@@ -213,6 +237,18 @@
     {
       "before": ["<leader>", "q"],
       "commands": [":close"]
+    },
+    {
+      "before": ["/"],
+      "commands": ["actions.find"]
+    },
+    {
+      "before": ["j"],
+      "after": ["g", "j"]
+    },
+    {
+      "before": ["k"],
+      "after": ["g", "k"]
     }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
@@ -240,7 +276,7 @@
       "commands": ["editor.action.blockComment"]
     }
   ],
-  "vim.insertModeKeyBindings": [
+  "vim.insertModeKeyBindingsNonRecursive": [
     // Completion keybinds
     {
       "before": ["<C-n>"],
@@ -257,7 +293,7 @@
   ],
 
   // WORKBENCH
-  "workbench.colorTheme": "Tokyo Night AltSynt",
+  "workbench.colorTheme": "Tokyo Night Gogh",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.settings.editor": "json",
@@ -269,7 +305,7 @@
 
   // WINDOW
   "window.menuBarVisibility": "toggle",
-  "window.zoomLevel": 1,
+  "window.titleBarStyle": "custom",
   "zenMode.hideLineNumbers": false,
   "zenMode.hideTabs": false,
 
