@@ -289,6 +289,10 @@
     {
       "before": ["<C-y>"],
       "commands": ["acceptSelectedSuggestion"]
+    },
+    {
+      "before":["<Tab>"],
+      "after":["<Nop>"]
     }
   ],
 
